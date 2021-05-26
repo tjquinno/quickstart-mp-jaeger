@@ -1,0 +1,18 @@
+app:
+  greeting: "Hello"
+server:
+  port: 8080
+  host: 0.0.0.0
+tracing:
+  service: "hello-world"
+  protocol: "http"
+  host: "localhost"
+  paths:
+    - path: "/metrics"
+      enabled: true
+    - path: "/greet"
+      enabled: true
+  propagation: "jaeger"
+  log-spans: true
+  max-queue-size: 42
+  flush-interval-ms: 10001
